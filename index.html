@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="root">
+        <audio class="audio" src="./sound-duck.mp3"></audio>
+        <div class="content">
+            <div class="wrapper">
+                <h1 class="heading">Bạn có muốn học không?</h1>
+                <div class="buttons">
+                    <button class="button yes">Yes</button>
+                    <button class="button no">No</button>
+                </div>
+            </div>
+        </div>
+        <div class="accept">
+            <div class="wrap-acc">
+                <h2 class="heading-acc">Còn chần chờ gì nữa, inbox ngay cho tớ nào...</h2>
+                <a href="https://messenger.com/100071027711302" class="ok-acc">Ok</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var btn_yes = document.querySelector('.button.yes');
+        var btn_no = document.querySelector('.button.no');
+        var ok = document.querySelector('.ok-acc');
+        var accept = document.querySelector('.accept');
+        var audio = document.querySelector('.audio');
+
+        const handleNo = () => {
+            audio.play();
+            var x = Math.floor(Math.random() * 260);
+            var y = Math.floor(Math.random() * 300);
+            btn_no.style.top = x + 'px';
+            btn_no.style.left = y + 'px';
+        }
+        const handleYes = () => {
+            audio.play();
+            var x = Math.floor(Math.random() * 260);
+            var y = Math.floor(Math.random() * 300);
+            btn_yes.style.top = x + 'px';
+            btn_yes.style.left = y + 'px';
+        }
+        btn_no.addEventListener('mouseover', handleNo);
+        btn_yes.addEventListener('mouseover', handleYes);
+        // ok.addEventListener('click', () => {
+        //     window.location = 'messenger.com/100071027711302'; //m.me/100071027711302
+        // });
+    </script>
+</body>
+
+</html>
